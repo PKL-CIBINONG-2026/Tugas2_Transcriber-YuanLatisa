@@ -44,11 +44,11 @@
 
         ul {
             padding: 0;
+            list-style: none;
         }
 
         .nav-links {
             display: flex;
-            list-style: none;
             gap: 20px;
         }
 
@@ -85,16 +85,19 @@
         }
 
         h2 {
-            font-size: 25px;
+            font-size: 30px;
             font-weight: 100;
+        }
+
+        p {
+            font-size: 13px;
         }
 
         ul.menu,
         ul.info {
             display: flex;
             align-items: center;
-            gap: 24px;
-            list-style: none;
+            gap: 15px;
             padding: 0;
             margin: 0;
         }
@@ -104,10 +107,11 @@
             display: flex;
             align-items: center;
             gap: 3px;
+            color: #6b6b6b;
         }
 
         .info {
-            color:#535353bc;
+            color: #535353bc;
         }
 
         li#a {
@@ -120,12 +124,26 @@
         }
 
         .isi {
-            position:absolute;
+            position: absolute;
             z-index: 1;
         }
 
         .list {
             list-style-type: none;
+        }
+
+        .list img {
+            width: 14px;
+            height: auto;
+        }
+
+        #integrations {
+            text-align: center;
+        }
+
+        footer {
+            background-color: darkblue;
+            color: white;
         }
     </style>
 </head>
@@ -160,7 +178,8 @@
                     style="width: 30%;">
             </div>
             <h1>The final <br><span style="color:#535353;">meeting platform.</span></h1>
-            <p style="font-size: 15px; font-weight: 400;">Create tasks and docs with AI and your team in real time. Every call ends with
+            <p style="font-size:18px; font-weight: 500;">Create tasks and docs with AI and your team in real time. Every
+                call ends with
                 progress.</p>
             <div>
                 <button
@@ -182,7 +201,8 @@
             <div>
                 <span class="product">Meeting Spaces</span>
                 <h2>Every meeting, recording, and action in one place</h2>
-                <p style="font-size:15px;">Transcriber organises meetings into spaces with recordings, knowlegde, and follow-ups so you and your
+                <p style="font-size:15px;">Transcriber organises meetings into spaces with recordings, knowlegde, and
+                    follow-ups so you and your
                     AI
                     teammate can act without delay.</p>
             </div>
@@ -236,7 +256,7 @@
                 <ul class="info">
                     <li><span style="color:black;">Replaces:</span><img
                             src="https://i.pinimg.com/736x/64/df/ca/64dfca4e05282b10c00194c5d4acccc3.jpg"
-                            style="height: 20px; width:auto"> Zoom</li>
+                            style="height: 17px; width:auto"> Zoom</li>
                     <li><img src="https://i.pinimg.com/1200x/e5/88/91/e58891e1c2c6c218a90eaab287b5f267.jpg"
                             style="height: 20px; width:auto">Google Meet</li>
                     <li><img src="https://cal.com/app-store/granola/icon.svg" style="height: 20px; width:auto">Granola
@@ -249,21 +269,22 @@
             <div>
                 <span class="product">AI Teammate</span>
                 <h2>Where business knowledge comes alive</h2>
-                <p style="font-size:15px;">An AI teammate that carries context from every meeting and page, making teamwork clearer and next
+                <p style="font-size:15px;">An AI teammate that carries context from every meeting and page, making
+                    teamwork clearer and next
                     steps
                     effortless.</p>
                 <ul class="list">
                     <li>
-                        <img>
-                        <p>Invisible until needed</p>
+                        <p><img src="https://i.pinimg.com/736x/c8/7b/a8/c87ba8c858cdcf41583800e00f1a62bc.jpg"
+                                alt="tick"> Invisible until needed</p>
                     </li>
                     <li>
-                        <img>
-                        <p>Answers questions in meetings and workspaces</p>
+                        <p><img src="https://i.pinimg.com/736x/c8/7b/a8/c87ba8c858cdcf41583800e00f1a62bc.jpg"
+                                alt="tick"> Answers questions in meetings and workspaces</p>
                     </li>
                     <li>
-                        <img>
-                        <p>Remembers past conversations and context</p>
+                        <p><img src="https://i.pinimg.com/736x/c8/7b/a8/c87ba8c858cdcf41583800e00f1a62bc.jpg"
+                                alt="tick"> Remembers past conversations and context</p>
                     </li>
                 </ul>
             </div>
@@ -279,18 +300,18 @@
                 <p>Transcriber connects company knowledge and past meetings, so your team always has clear answers with
                     the
                     right context.</p>
-                <ul>
+                <ul class="list">
                     <li>
-                        <img>
-                        <p>Combines knowledge and meetings for answers</p>
+                        <p><img src="https://i.pinimg.com/736x/c8/7b/a8/c87ba8c858cdcf41583800e00f1a62bc.jpg"
+                                alt="tick"> Combines knowledge and meetings for answers</p>
                     </li>
                     <li>
-                        <img>
-                        <p>Delivers context so decisions are clear</p>
+                        <p><img src="https://i.pinimg.com/736x/c8/7b/a8/c87ba8c858cdcf41583800e00f1a62bc.jpg"
+                                alt="tick"> Delivers context so decisions are clear</p>
                     </li>
                     <li>
-                        <img>
-                        <p>Connects Google Drive, Notion, and more</p>
+                        <p><img src="https://i.pinimg.com/736x/c8/7b/a8/c87ba8c858cdcf41583800e00f1a62bc.jpg"
+                                alt="tick"> Connects Google Drive, Notion, and more</p>
                     </li>
                 </ul>
             </div>
@@ -317,18 +338,39 @@
                     across your tech stack automatically.</p>
             </div>
             <div>
-                <span>CRM Updates</span>
-                <span>Follow Ups</span>
-                <span>Workflows</span>
+                <ul class="menu">
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 1024 1024">
+                            <path d="M0 0h1024v1024H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3c0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8c24.9-25 24.9-65.5-.1-90.5" />
+                        </svg>
+                        CRM Updates
+                    </li>
+                    <li id="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+                        </svg>
+                        Follow Ups
+                    </li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 80 80">
+                            <path d="M0 0h80v80H0z" fill="none" />
+                            <path fill="currentColor" stroke-linecap="square" stroke-linejoin="round"
+                                d="M37.867 38.4a2 2 0 0 1 0 3.2L11.2 61.6c-1.318.989-3.2.048-3.2-1.6V20c0-1.648 1.882-2.589 3.2-1.6zm32 0a2 2 0 0 1 0 3.2L43.2 61.6c-1.319.989-3.2.048-3.2-1.6V20c0-1.648 1.882-2.589 3.2-1.6z" />
+                        </svg>
+                        Workflows
+                    </li>
+                </ul>
             </div>
             <div>
                 <img>
             </div>
         </section>
 
-        <section>
+        <section id="integrations">
             <div>
-                <h2>80+ integrations</h2>
+                <hr>
+                <h2 style="padding-top: 30px;">80+ integrations</h2>
                 <p>Connect your agent to powerful external tools</p>
             </div>
             <div>
@@ -360,10 +402,11 @@
             </div>
         </section>
 
-        <section>
+        <section id="faqs">
             <div>
                 <h2>FAQs</h2>
-                <p>If you can't find the answer to your question below, email us at <a>support@Transcriber.co</a></p>
+                <p>If you can't find the answer to your question below, email us at <span
+                        style="color:blue;">support@Transcriber.co</span></p>
             </div>
             <div>
                 <details>
@@ -397,35 +440,37 @@
             </div>
         </section>
 
-        <section>
+        <section id="b">
             <div>
                 <div>
                     <div>
                         <img src="/Transcriber - Web Image/Transcriber-Images/imgi_31_yc89iqIFS0VowDO6Vb4mj0Vs6dw.svg">
                     </div>
-                    <h1>Ready to take meetings to the next level?</h1>
+                    <h1>Ready to take meetings <br><span style="color:#535353;">to the next level?</span></h1>
                     <p>Try Transcriber for a few meetings today. It's free to get started.</p>
-                    <button>Sign up</button>
-                    <button>Book a demo</button>
+                    <button class="btn-insight">Sign up</button>
+                    <button
+                        style="background-color: #ffffff; border: 1px solid #aeaeae; border-radius: 10px; padding: 10px;">Book
+                        a demo</button>
                 </div>
                 <div>
                     <h3>What we'll cover on our demo</h3>
-                    <ul>
+                    <ul class="list">
                         <li>
-                            <img>
-                            <p>CAutomatic notes and follow-ups from every call</p>
+                            <p><img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg">
+                                CAutomatic notes and follow-ups from every call</p>
                         </li>
                         <li>
-                            <img>
-                            <p>All meetings, docs, and decisions in one place</p>
+                            <p><img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg"> All
+                                meetings, docs, and decisions in one place</p>
                         </li>
                         <li>
-                            <img>
-                            <p>How Transcriber saves teams hours each week</p>
+                            <p><img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg"> How
+                                Transcriber saves teams hours each week</p>
                         </li>
                         <li>
-                            <img>
-                            <p>Quick demo of the platform</p>
+                            <p><img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg"> Quick
+                                demo of the platform</p>
                         </li>
                     </ul>
                 </div>
