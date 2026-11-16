@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Platform Landing Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+
+        h1,
+        h2 {
+            font-family: "Libre Baskerville", serif;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        section {
+            margin: 60px 40px;
+        }
+
+        header {
+            background-color: #ffffff;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: #ffffff;
+            border-bottom: 1px solid #c9c9c9c6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            padding: 10px 40px;
+            font-size: 50%;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        button {
+            font-size: 9px;
+        }
+
+        #login {
+            border: none;
+            background-color: transparent;
+        }
+
+        .btn-insight {
+            border: none;
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 15px;
+        }
+
+        .hero {
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 100;
+        }
+
+        .product {
+            font-size: 10px;
+            color: blue;
+        }
+
+        h2 {
+            font-size: 25px;
+            font-weight: 100;
+        }
+
+        ul.menu,
+        ul.info {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.menu li,
+        ul.info li {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .info {
+            color:#535353bc;
+        }
+
+        li#a {
+            color: blue;
+        }
+
+        .bg {
+            position: relative;
+            z-index: -1;
+        }
+
+        .isi {
+            position:absolute;
+            z-index: 1;
+        }
+
+        .list {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="brand">
+                <img src="/Transcriber - Web Image/Transcriber-Images/transcriber-logo.svg" alt="logo"
+                    style="width: 90px;">
+            </div>
+            <div class="link">
+                <ul class="nav-links">
+                    <li><a>Product</a></li>
+                    <li><a>Resources</a></li>
+                    <li><a>Pricing</a></li>
+                    <li><a>Customers</a></li>
+                    <li><a>Talk to Sales</a></li>
+                </ul>
+            </div>
+            <div class="btn-nav">
+                <button id="login">Log in</button>
+                <button class="btn-insight">Sign up</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <img src="/Transcriber - Web Image//Transcriber-Images/imgi_1_top-post-topic-badge.svg" alt="badge"
+                    style="width: 30%;">
+            </div>
+            <h1>The final <br><span style="color:#535353;">meeting platform.</span></h1>
+            <p style="font-size: 15px; font-weight: 400;">Create tasks and docs with AI and your team in real time. Every call ends with
+                progress.</p>
+            <div>
+                <button
+                    style="background-color: #ffffff; border: 1px solid #aeaeae; border-radius: 10px; padding: 10px;">Book
+                    a demo</button>
+                <button class="btn-insight">Try for free</button>
+            </div>
+            <!-- bisa di scroll kanan kiri -->
+            <!-- <div>
+                <ul>
+                    <li><img src="/Transcriber - Web Image/Transcriber-Images/logo-1.png"></li>
+                    <li><img src="/Transcriber - Web Image/Transcriber-Images/logo-2.png"></li>
+                    <li><img src="/Transcriber - Web Image/Transcriber-Images/logo-3.png"></li>
+                </ul>
+            </div> -->
+        </section>
+
+        <section id="meetings">
+            <div>
+                <span class="product">Meeting Spaces</span>
+                <h2>Every meeting, recording, and action in one place</h2>
+                <p style="font-size:15px;">Transcriber organises meetings into spaces with recordings, knowlegde, and follow-ups so you and your
+                    AI
+                    teammate can act without delay.</p>
+            </div>
+            <div>
+                <ul class="menu">
+                    <li id="a"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 1024 1024">
+                            <path d="M0 0h1024v1024H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3c0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8c24.9-25 24.9-65.5-.1-90.5" />
+                        </svg>
+                        Meetings</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                            <defs>
+                                <clipPath id="trayClip">
+                                    <path
+                                        d="m22.02 11.78l-.65-2.28c-.8-2.8-1.2-4.19-2.27-5s-2.52-.8-5.42-.8h-3.35c-2.9 0-4.35 0-5.42.8c-1.07.81-1.47 2.2-2.27 5l-.66 2.27l-.2.78l-.04.32c-.02.2-.02.4-.02.8c0 2.69 0 4.03.61 5a4 4 0 0 0 1.25 1.25c.98.62 2.32.62 5 .62h6.83c2.69 0 4.03 0 5.01-.62a4 4 0 0 0 1.25-1.24c.61-.98.61-2.32.61-5.01c0-.4 0-.6-.02-.8l-.04-.32c-.04-.2-.09-.39-.2-.77" />
+                                </clipPath>
+                            </defs>
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <g fill="none">
+                                <path fill="currentColor" clip-path="url(#trayClip)"
+                                    d="M1.95 12.83h3.02c.67 0 1 0 1.32.05a4 4 0 0 1 1.2.4c.3.15.56.35 1.1.75l.14.11c.39.29.58.43.78.55a4 4 0 0 0 1.54.51c.23.03.47.03.95.03c.51 0 .77 0 1.01-.03a4 4 0 0 0 1.51-.51c.22-.13.42-.28.83-.59l.1-.07c.5-.38.75-.57 1.02-.72a4 4 0 0 1 1.3-.44c.3-.04.61-.04 1.24-.04h3.04V24H1.95Z" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    d="m22.02 11.78l-.65-2.28c-.8-2.8-1.2-4.19-2.27-5s-2.52-.8-5.42-.8h-3.35c-2.9 0-4.35 0-5.42.8c-1.07.81-1.47 2.2-2.27 5l-.66 2.27l-.2.78l-.04.32c-.02.2-.02.4-.02.8c0 2.69 0 4.03.61 5a4 4 0 0 0 1.25 1.25c.98.62 2.32.62 5 .62h6.83c2.69 0 4.03 0 5.01-.62a4 4 0 0 0 1.25-1.24c.61-.98.61-2.32.61-5.01c0-.4 0-.6-.02-.8l-.04-.32c-.04-.2-.09-.39-.2-.77" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    d="M1.95 12.83h3.02c.67 0 1 0 1.32.05a4 4 0 0 1 1.2.4c.3.15.56.35 1.1.75l.14.11c.39.29.58.43.78.55a4 4 0 0 0 1.54.51c.23.03.47.03.95.03c.51 0 .77 0 1.01-.03a4 4 0 0 0 1.51-.51c.22-.13.42-.28.83-.59l.1-.07c.5-.38.75-.57 1.02-.72a4 4 0 0 1 1.3-.44c.3-.04.61-.04 1.24-.04h3.04" />
+                            </g>
+                        </svg>
+                        Shared Knowledge
+                    </li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M18.75 12a6.75 6.75 0 1 0-3.375 5.846a.75.75 0 0 1 .75 1.299A8.251 8.251 0 1 1 20.25 12a.75.75 0 0 1-1.5 0" />
+                            <path fill="currentColor" d="M15.75 13a1.5 1.5 0 0 0 3 0h1.5a3 3 0 0 1-6 0z" />
+                            <path fill="currentColor"
+                                d="M14.25 12a2.25 2.25 0 1 0-4.5 0a2.25 2.25 0 0 0 4.5 0m1.5 0a3.75 3.75 0 1 1-7.5 0a3.75 3.75 0 0 1 7.5 0m4.5-.75V13h-1.5v-1.75z" />
+                            <path fill="currentColor" d="M14.25 14V9a.75.75 0 0 1 1.5 0v5a.75.75 0 0 1-1.5 0" />
+                        </svg>
+                        Replay</li>
+                </ul>
+            </div>
+            <div class="picture1">
+                <img src="/Transcriber - Web Image/Transcriber-Images/purple-grad-1.png"
+                    style="height: 500px; width:auto" class="bg">
+                <!-- <img src="/Transcriber - Web Image/Transcriber-Images/screen-1-1.png" class="isi"> -->
+            </div>
+            <div>
+                <ul class="info">
+                    <li><span style="color:black;">Replaces:</span><img
+                            src="https://i.pinimg.com/736x/64/df/ca/64dfca4e05282b10c00194c5d4acccc3.jpg"
+                            style="height: 20px; width:auto"> Zoom</li>
+                    <li><img src="https://i.pinimg.com/1200x/e5/88/91/e58891e1c2c6c218a90eaab287b5f267.jpg"
+                            style="height: 20px; width:auto">Google Meet</li>
+                    <li><img src="https://cal.com/app-store/granola/icon.svg" style="height: 20px; width:auto">Granola
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="ai">
+            <div>
+                <span class="product">AI Teammate</span>
+                <h2>Where business knowledge comes alive</h2>
+                <p style="font-size:15px;">An AI teammate that carries context from every meeting and page, making teamwork clearer and next
+                    steps
+                    effortless.</p>
+                <ul class="list">
+                    <li>
+                        <img>
+                        <p>Invisible until needed</p>
+                    </li>
+                    <li>
+                        <img>
+                        <p>Answers questions in meetings and workspaces</p>
+                    </li>
+                    <li>
+                        <img>
+                        <p>Remembers past conversations and context</p>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <img src="">
+            </div>
+        </section>
+
+        <section id="knowledge">
+            <div>
+                <span class="product">Knowledge</span>
+                <h2>Where context and meetings connect</h2>
+                <p>Transcriber connects company knowledge and past meetings, so your team always has clear answers with
+                    the
+                    right context.</p>
+                <ul>
+                    <li>
+                        <img>
+                        <p>Combines knowledge and meetings for answers</p>
+                    </li>
+                    <li>
+                        <img>
+                        <p>Delivers context so decisions are clear</p>
+                    </li>
+                    <li>
+                        <img>
+                        <p>Connects Google Drive, Notion, and more</p>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <img>
+            </div>
+            <div>
+                <ul>
+                    <li><img></li>
+                    <li><img></li>
+                    <li><img></li>
+                    <li><img></li>
+                    <li><img></li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <span class="product">Integrations</span>
+                <h2>Where decisions turn into action</h2>
+                <p>Transcriber takes decisions and context from meetings and knowledge, then carries out the right
+                    action
+                    across your tech stack automatically.</p>
+            </div>
+            <div>
+                <span>CRM Updates</span>
+                <span>Follow Ups</span>
+                <span>Workflows</span>
+            </div>
+            <div>
+                <img>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>80+ integrations</h2>
+                <p>Connect your agent to powerful external tools</p>
+            </div>
+            <div>
+                <div>
+                    <img>
+                </div>
+                <div>
+                    <img>
+                </div>
+                <div>
+                    <img>
+                </div>
+                <div>
+                    <img>
+                </div>
+
+                <div>
+                    <img>
+                </div>
+                <div>
+                    <img>
+                </div>
+                <div>
+                    <img>
+                </div>
+                <div>
+                    <img>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>FAQs</h2>
+                <p>If you can't find the answer to your question below, email us at <a>support@Transcriber.co</a></p>
+            </div>
+            <div>
+                <details>
+                    <summary>Does Transcriber work with Zoom or Google Meet?</summary>
+                    <p></p>
+                </details>
+                <details>
+                    <summary>What makes Transcriber different from AI note-takers?</summary>
+                    <p></p>
+                </details>
+                <details>
+                    <summary>Does Transcriber show up as a participant in my meetings?</summary>
+                    <p></p>
+                </details>
+                <details>
+                    <summary>Can Transcriber connect with the tools we already use?</summary>
+                    <p></p>
+                </details>
+                <details>
+                    <summary>Can I try Transcriber for free?</summary>
+                    <p></p>
+                </details>
+                <details>
+                    <summary>Is Transcriber secure for sensitive calls?</summary>
+                    <p></p>
+                </details>
+                <details>
+                    <summary>Can I ask Transcriber questions outside of meetings?</summary>
+                    <p></p>
+                </details>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <div>
+                    <div>
+                        <img src="/Transcriber - Web Image/Transcriber-Images/imgi_31_yc89iqIFS0VowDO6Vb4mj0Vs6dw.svg">
+                    </div>
+                    <h1>Ready to take meetings to the next level?</h1>
+                    <p>Try Transcriber for a few meetings today. It's free to get started.</p>
+                    <button>Sign up</button>
+                    <button>Book a demo</button>
+                </div>
+                <div>
+                    <h3>What we'll cover on our demo</h3>
+                    <ul>
+                        <li>
+                            <img>
+                            <p>CAutomatic notes and follow-ups from every call</p>
+                        </li>
+                        <li>
+                            <img>
+                            <p>All meetings, docs, and decisions in one place</p>
+                        </li>
+                        <li>
+                            <img>
+                            <p>How Transcriber saves teams hours each week</p>
+                        </li>
+                        <li>
+                            <img>
+                            <p>Quick demo of the platform</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>
+            <img src="/Transcriber - Web Image/Transcriber-Images/transcriber-logo.svg" alt="logo">
+            <div>
+                <img>
+                <img>
+            </div>
+            <p> &copy; 2025 Seeking Sigma Inc. All rights reserved.</p>
+        </div>
+
+        <div>
+            <div>
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#ai">AI Teammates</a></li>
+                    <li><a>Meetings</a></li>
+                    <li><a>Integrations</a></li>
+                    <li><a>Changelog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul>
+                    <li>Blog</li>
+                    <li>Customers</li>
+                    <li>Enterprise</li>
+                    <li>Help Center</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li>Careers</li>
+                    <li>Legal</li>
+                    <li>Status</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

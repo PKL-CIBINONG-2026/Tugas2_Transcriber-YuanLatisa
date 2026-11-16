@@ -1,0 +1,9 @@
+Tugas Pembuatan Ulang Halaman Web
+
+Peruntukan halaman tugas ada di file .zip masing-masing ya
+
+Font pada web: STK Bureau Serif Book, Inter
+
+Gambar di screenshot pada resolusi layar 1920x1080, scaling display 100%, dan zoom level browser di 125%.
+
+Selamat mengerjakan~
