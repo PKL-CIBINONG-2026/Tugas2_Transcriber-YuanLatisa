@@ -56,7 +56,7 @@
             font-size: 9px;
         }
 
-        #login {
+        .btn-login {
             border: none;
             background-color: transparent;
         }
@@ -69,7 +69,44 @@
             padding: 10px 15px;
         }
 
-        .hero {
+        .carousel {
+            margin: 70px 0 -50px 0;
+            width: 90%;
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1px;
+            animation: spin 30s infinite linear;
+            padding-right: 10px;
+        }
+
+        .card {
+            flex: 0 0 5px;
+            padding: 1em;
+
+        }
+
+        @keyframes spin {
+            from {
+                translate: 0;
+            }
+
+            to {
+                translate: -100%;
+            }
+        }
+
+        .hero-section {
             padding-top: 50px;
             text-align: center;
         }
@@ -79,7 +116,14 @@
             font-weight: 100;
         }
 
-        .product {
+        .btn-hero {
+            background-color: #ffffff;
+            border: 1px solid #aeaeae;
+            border-radius: 10px;
+            padding: 10px
+        }
+
+        .section-tag {
             font-size: 10px;
             color: blue;
         }
@@ -114,18 +158,199 @@
             color: #535353bc;
         }
 
-        li#a {
+        ul li.current-tab {
             color: blue;
         }
 
-        .bg {
+        .media {
             position: relative;
-            z-index: -1;
+            margin: 20px 0;
+            overflow: hidden;
         }
 
-        .isi {
+        .image-container {
+            width: 40em;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .content {
             position: absolute;
-            z-index: 1;
+            top: 55px;
+            left: 90px;
+            z-index: 2;
+        }
+
+        .mockup-img {
+            width: 550px;
+        }
+
+        .card-content {
+            position: absolute;
+            top: 0;
+            left: 170px;
+        }
+
+        .bg-image {
+            width: 300px;
+        }
+
+        .dec {
+            position: absolute;
+            width: 200px;
+            top: 20px;
+            left: 45px;
+        }
+
+        .media p {
+            position: absolute;
+            bottom: 80px;
+            left: 105px;
+            color: #7a7a7a;
+            font-size: 15px;
+        }
+
+        .btn-content {
+            position: absolute;
+            display: flex;
+            gap: 20px;
+            color: #aeaeae;
+            left: 105px;
+            bottom: 30px;
+        }
+
+        .btn-cancel,
+        .btn-mic {
+            background-color: #ffffff;
+            padding: 8px 10px;
+            border-radius: 50%;
+            align-items: center;
+        }
+
+        .voice-promt {
+            position: absolute;
+            bottom: 50px;
+            left: 210px;
+            background-color: #d0cece7c;
+            width: 200px;
+            height: 25px;
+            border-radius: 50px;
+            padding: 10px;
+            border: 1px solid white;
+        }
+
+        .voice-promt span {
+            color: #ffffff;
+        }
+
+        .content3 {
+            position: absolute;
+            left: 160px;
+        }
+
+        .text-box {
+            position: absolute;
+            height: 40px;
+            border-radius: 10px 10px 0 0;
+            border: 1px solid #e8e8e8;
+        }
+
+        .layer1 {
+            background-color: #fefefebc;
+            top: -18.5em;
+            left: 6px;
+            width: 19em;
+            height: 100px;
+        }
+
+        .layer2 {
+            background-color: #ffffffbc;
+            top: -18em;
+            left: 3px;
+            width: 19.5em;
+            height: 100px;
+        }
+
+        .layer3 {
+            position: absolute;
+            bottom: -11em;
+            width: 20em;
+            height: auto;
+        }
+
+        .grid-app {
+            display: flex;
+        }
+
+        .grid-app li {
+            padding: 10px 20px;
+            width: 86px;
+            border: 1px solid rgb(227, 227, 227);
+        }
+
+        .content4 {
+            position: absolute;
+        }
+
+        .image {
+            position: absolute;
+            top: -27em;
+            left: 40px;
+            width: 600px;
+        }
+
+        .logo-app {
+            position: absolute;
+            top: -30em;
+            left: 40px;
+            width: 45px;
+        }
+
+        .content4 span {
+            position: absolute;
+            color: #e9e9e9;
+            top: -48em;
+            left: 48em;
+            width: 20em;
+            font-size: 10px;
+        }
+
+        .create-task {
+            position: absolute;
+            bottom: 25px;
+            left: 470px;
+            background-color: #ffffff;
+            width: 130px;
+            height: 20px;
+            border-radius: 50px;
+            padding: 10px;
+            border: 1px solid rgb(206, 223, 255);
+        }
+
+        .create-task span {
+            color: #224bc6;
+            font-size: 10px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .item {
+            height: 90px;
+            width: 90%;
+            border: 1px solid rgb(220, 220, 220);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item img {
+            width: 32px;
+            height: 32px;
         }
 
         .list {
@@ -151,7 +376,7 @@
 <body>
     <header>
         <nav>
-            <div class="brand">
+            <div class="logo">
                 <img src="/Transcriber - Web Image/Transcriber-Images/transcriber-logo.svg" alt="logo"
                     style="width: 90px;">
             </div>
@@ -164,51 +389,66 @@
                     <li><a>Talk to Sales</a></li>
                 </ul>
             </div>
-            <div class="btn-nav">
-                <button id="login">Log in</button>
+            <div class="nav-buttons">
+                <button class="btn-login">Log in</button>
                 <button class="btn-insight">Sign up</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero-section">
             <div>
                 <img src="/Transcriber - Web Image//Transcriber-Images/imgi_1_top-post-topic-badge.svg" alt="badge"
-                    style="width: 30%;">
+                    style="width: 25%;">
             </div>
             <h1>The final <br><span style="color:#535353;">meeting platform.</span></h1>
             <p style="font-size:18px; font-weight: 500;">Create tasks and docs with AI and your team in real time. Every
-                call ends with
-                progress.</p>
+                call ends with progress.</p>
             <div>
-                <button
-                    style="background-color: #ffffff; border: 1px solid #aeaeae; border-radius: 10px; padding: 10px;">Book
-                    a demo</button>
+                <button class="btn-hero">Book a demo</button>
                 <button class="btn-insight">Try for free</button>
             </div>
-            <!-- bisa di scroll kanan kiri -->
-            <!-- <div>
-                <ul>
-                    <li><img src="/Transcriber - Web Image/Transcriber-Images/logo-1.png"></li>
-                    <li><img src="/Transcriber - Web Image/Transcriber-Images/logo-2.png"></li>
-                    <li><img src="/Transcriber - Web Image/Transcriber-Images/logo-3.png"></li>
-                </ul>
-            </div> -->
+
+            <div class="carousel">
+                <div class="group">
+                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-1.png"
+                            style="height: 21px;"></div>
+                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-2.png"
+                            style="height: 22px;"></div>
+                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-3.png"
+                            style="height: 21px;"></div>
+                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-4.png"
+                            style="height: 35px;"></div>
+                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-5.png"
+                            style="height: 35px;"></div>
+                </div>
+                <div aria-hidden class="group">
+                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-1.png"
+                            style="height: 21px;"></div>
+                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-2.png"
+                            style="height: 22px;"></div>
+                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-3.png"
+                            style="height: 21px;"></div>
+                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-4.png"
+                            style="height: 35px;"></div>
+                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-5.png"
+                            style="height: 35px;"></div>
+                </div>
+            </div>
         </section>
 
-        <section id="meetings">
+        <section class="feature-section meeting-spaces">
             <div>
-                <span class="product">Meeting Spaces</span>
+                <span class="section-tag">Meeting Spaces</span>
                 <h2>Every meeting, recording, and action in one place</h2>
                 <p style="font-size:15px;">Transcriber organises meetings into spaces with recordings, knowlegde, and
-                    follow-ups so you and your
-                    AI
-                    teammate can act without delay.</p>
+                    follow-ups so you and your AI teammate can act without delay.</p>
             </div>
             <div>
                 <ul class="menu">
-                    <li id="a"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 1024 1024">
+                    <li class="current-tab"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                            viewBox="0 0 1024 1024">
                             <path d="M0 0h1024v1024H0z" fill="none" />
                             <path fill="currentColor"
                                 d="M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3c0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8c24.9-25 24.9-65.5-.1-90.5" />
@@ -247,11 +487,13 @@
                         Replay</li>
                 </ul>
             </div>
-            <div class="picture1">
-                <img src="/Transcriber - Web Image/Transcriber-Images/purple-grad-1.png"
-                    style="height: 500px; width:auto" class="bg">
-                <!-- <img src="/Transcriber - Web Image/Transcriber-Images/screen-1-1.png" class="isi"> -->
+            <div class="media">
+                <img src="/Transcriber - Web Image/Transcriber-Images/purple-grad-1.png" class="image-container">
+                <div class="content">
+                    <img src="/Transcriber - Web Image/Transcriber-Images/screen-1-1.png" class="mockup-img">
+                </div>
             </div>
+
             <div>
                 <ul class="info">
                     <li><span style="color:black;">Replaces:</span><img
@@ -265,14 +507,12 @@
             </div>
         </section>
 
-        <section id="ai">
+        <section class="feature-section ai-teammate">
             <div>
-                <span class="product">AI Teammate</span>
+                <span class="section-tag">AI Teammate</span>
                 <h2>Where business knowledge comes alive</h2>
                 <p style="font-size:15px;">An AI teammate that carries context from every meeting and page, making
-                    teamwork clearer and next
-                    steps
-                    effortless.</p>
+                    teamwork clearer and next steps effortless.</p>
                 <ul class="list">
                     <li>
                         <p><img src="https://i.pinimg.com/736x/c8/7b/a8/c87ba8c858cdcf41583800e00f1a62bc.jpg"
@@ -287,19 +527,55 @@
                                 alt="tick"> Remembers past conversations and context</p>
                     </li>
                 </ul>
-            </div>
-            <div>
-                <img src="">
-            </div>
+
+                <div class="media">
+                    <img src="/Transcriber - Web Image/Transcriber-Images/bg.png" class="image-container">
+                    <div class="card-content">
+                        <img src="Transcriber - Web Image/Transcriber-Images/imgi_10_BhZqQlgQ5YTU9yZaEMab8NfpxQ.svg"
+                            class="bg-image">
+                        <div class="content2">
+                            <img src="Transcriber - Web Image/Transcriber-Images/imgi_11_1HOnQYOLivltfoySt6CsOjSayWM.svg"
+                                class="dec">
+                        </div>
+                        <p>Waking Up...</p>
+                        <div class="btn-content">
+                            <div class="btn-cancel"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                    viewBox="0 0 2048 2048">
+                                    <path d="M0 0h2048v2048H0z" fill="none" />
+                                    <path fill="currentColor"
+                                        d="m1115 1024l690 691l-90 90l-691-690l-691 690l-90-90l690-691l-690-691l90-90l691 690l691-690l90 90z" />
+                                </svg>
+                            </div>
+                            <div class="btn-mic"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                    viewBox="0 0 16 16">
+                                    <path d="M0 0h16v16H0z" fill="none" />
+                                    <g fill="currentColor">
+                                        <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0z" />
+                                        <path
+                                            d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="voice-promt">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path d="M0 0h16v16H0z" fill="none" />
+                                <path fill="currentColor"
+                                    d="M5.465 9.83a.92.92 0 0 0 1.07 0a1 1 0 0 0 .341-.46l.347-1.067a1.7 1.7 0 0 1 1.078-1.078l1.086-.354a.923.923 0 0 0-.037-1.75l-1.069-.346a1.7 1.7 0 0 1-1.08-1.078l-.353-1.084a.92.92 0 0 0-.869-.61a.92.92 0 0 0-.875.624l-.356 1.09A1.71 1.71 0 0 1 3.7 4.775l-1.084.351a.923.923 0 0 0 .013 1.745l1.067.347a1.71 1.71 0 0 1 1.081 1.083l.352 1.08a.92.92 0 0 0 .337.449m5.07 4.021a.8.8 0 0 0 .464.148a.81.81 0 0 0 .759-.55l.248-.761a1.09 1.09 0 0 1 .68-.681l.772-.252a.8.8 0 0 0-.023-1.52l-.764-.25a1.08 1.08 0 0 1-.68-.678l-.252-.774a.8.8 0 0 0-1.518.011l-.247.762a1.07 1.07 0 0 1-.664.679l-.776.253a.8.8 0 0 0-.388 1.222c.099.14.239.244.4.3l.763.247a1.06 1.06 0 0 1 .68.683l.253.774a.8.8 0 0 0 .292.387" />
+                            </svg>
+                            Tap or say "Hey Lyra"</span>
+                    </div>
+                </div>
+
         </section>
 
-        <section id="knowledge">
+        <section class="feature-section knowledge">
             <div>
-                <span class="product">Knowledge</span>
+                <span class="section-tag">Knowledge</span>
                 <h2>Where context and meetings connect</h2>
                 <p>Transcriber connects company knowledge and past meetings, so your team always has clear answers with
-                    the
-                    right context.</p>
+                    the right context.</p>
                 <ul class="list">
                     <li>
                         <p><img src="https://i.pinimg.com/736x/c8/7b/a8/c87ba8c858cdcf41583800e00f1a62bc.jpg"
@@ -315,27 +591,33 @@
                     </li>
                 </ul>
             </div>
-            <div>
-                <img>
+            <div class="media">
+                <img src="/Transcriber - Web Image/Transcriber-Images/imgi_33_5sOjm3P6y3R2Ir7SaEy2WtFrMdo.png"
+                    class="image-container">
+                <div class="content3">
+                    <div class="text-box layer1"></div>
+                    <div class="text-box layer2"></div>
+                    <img src="Transcriber - Web Image/Transcriber-Images/imgi_13_xGDAmN0B4wSuHmax4hA4kk4kxys.svg"
+                        class="layer3">
+                </div>
             </div>
             <div>
-                <ul>
-                    <li><img></li>
-                    <li><img></li>
-                    <li><img></li>
-                    <li><img></li>
-                    <li><img></li>
+                <ul class="grid-app">
+                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-4.svg"></li>
+                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-5.svg"></li>
+                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-6.svg"></li>
+                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-n.svg"></li>
+                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-pd.svg"></li>
                 </ul>
             </div>
         </section>
 
-        <section>
+        <section class="feature-section integrations">
             <div>
-                <span class="product">Integrations</span>
+                <span class="section-tag">Integrations</span>
                 <h2>Where decisions turn into action</h2>
                 <p>Transcriber takes decisions and context from meetings and knowledge, then carries out the right
-                    action
-                    across your tech stack automatically.</p>
+                    action across your tech stack automatically.</p>
             </div>
             <div>
                 <ul class="menu">
@@ -346,7 +628,8 @@
                         </svg>
                         CRM Updates
                     </li>
-                    <li id="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                    <li class="current-tab"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 16 16">
                             <path d="M0 0h16v16H0z" fill="none" />
                             <path fill="currentColor"
                                 d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
@@ -362,8 +645,23 @@
                     </li>
                 </ul>
             </div>
-            <div>
-                <img>
+            <div class="media">
+                <img src="Transcriber - Web Image/Transcriber-Images/imgi_106_HRv3p2lJwmZqEWY39IXdd3caM0.png"
+                    class="image-container">
+                <div class="content4">
+                    <img src="Transcriber - Web Image/Transcriber-Images/imgi_49_F2OLF4e2ixkOaKd62d9mUxFV8.png"
+                        class="image">
+                    <img src="Transcriber - Web Image/Transcriber-Images/logo-n-invert.svg" class="logo-app">
+                    <span>Automatically creating tasks</span>
+                </div>
+                <div class="create-task">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M5.465 9.83a.92.92 0 0 0 1.07 0a1 1 0 0 0 .341-.46l.347-1.067a1.7 1.7 0 0 1 1.078-1.078l1.086-.354a.923.923 0 0 0-.037-1.75l-1.069-.346a1.7 1.7 0 0 1-1.08-1.078l-.353-1.084a.92.92 0 0 0-.869-.61a.92.92 0 0 0-.875.624l-.356 1.09A1.71 1.71 0 0 1 3.7 4.775l-1.084.351a.923.923 0 0 0 .013 1.745l1.067.347a1.71 1.71 0 0 1 1.081 1.083l.352 1.08a.92.92 0 0 0 .337.449m5.07 4.021a.8.8 0 0 0 .464.148a.81.81 0 0 0 .759-.55l.248-.761a1.09 1.09 0 0 1 .68-.681l.772-.252a.8.8 0 0 0-.023-1.52l-.764-.25a1.08 1.08 0 0 1-.68-.678l-.252-.774a.8.8 0 0 0-1.518.011l-.247.762a1.07 1.07 0 0 1-.664.679l-.776.253a.8.8 0 0 0-.388 1.222c.099.14.239.244.4.3l.763.247a1.06 1.06 0 0 1 .68.683l.253.774a.8.8 0 0 0 .292.387" />
+                        </svg>
+                        Creates tasks for you</span>
+                </div>
             </div>
         </section>
 
@@ -373,31 +671,30 @@
                 <h2 style="padding-top: 30px;">80+ integrations</h2>
                 <p>Connect your agent to powerful external tools</p>
             </div>
-            <div>
-                <div>
-                    <img>
+            <div class="grid-container">
+                <div class="item">
+                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-1.png">
                 </div>
-                <div>
-                    <img>
+                <div class="item">
+                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-2.png">
                 </div>
-                <div>
-                    <img>
+                <div class="item">
+                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-3.png">
                 </div>
-                <div>
-                    <img>
+                <div class="item">
+                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-4.png">
                 </div>
-
-                <div>
-                    <img>
+                <div class="item">
+                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-5.png">
                 </div>
-                <div>
-                    <img>
+                <div class="item">
+                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-6.png">
                 </div>
-                <div>
-                    <img>
+                <div class="item">
+                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-7.png">
                 </div>
-                <div>
-                    <img>
+                <div class="item">
+                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-8.png">
                 </div>
             </div>
         </section>
