@@ -8,6 +8,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
 
+        * {
+            box-sizing: border-box;
+        }
+
         h1,
         h2 {
             font-family: "Libre Baskerville", serif;
@@ -19,8 +23,10 @@
             margin: 0;
         }
 
-        section {
-            margin: 60px 40px;
+        .feature-section {
+            max-width: 40em;
+            margin: 70px auto;
+            padding: 0 20px;
         }
 
         header {
@@ -38,8 +44,8 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            padding: 10px 40px;
-            font-size: 50%;
+            padding: 12px 40px;
+            font-size: 13px;
         }
 
         ul {
@@ -49,32 +55,38 @@
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 24px;
+            margin: 0;
+            color: #4b5563;
         }
 
         button {
-            font-size: 9px;
+            font-size: 12px;
+            cursor: pointer;
+            font-family: "Inter", sans-serif;
         }
 
         .btn-login {
             border: none;
             background-color: transparent;
+            margin-right: 10px;
+            color: #374151;
         }
 
         .btn-insight {
             border: none;
-            background-color: blue;
+            background-color: #2546f0;
             color: white;
-            border-radius: 10px;
-            padding: 10px 15px;
+            border-radius: 8px;
+            padding: 9px 16px;
         }
 
         .carousel {
-            margin: 70px 0 -50px 0;
-            width: 90%;
+            margin: 60px auto 0 auto;
+            max-width: 600px;
             display: flex;
-            overflow-x: auto;
-            gap: 10px;
+            overflow: hidden;
+            gap: 40px;
         }
 
         .carousel::-webkit-scrollbar {
@@ -84,100 +96,119 @@
         .group {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 1px;
+            justify-content: space-around;
+            gap: 40px;
+            flex-shrink: 0;
+            min-width: 100%;
             animation: spin 30s infinite linear;
-            padding-right: 10px;
         }
 
         .card {
-            flex: 0 0 5px;
-            padding: 1em;
-
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         @keyframes spin {
-            from {
-                translate: 0;
-            }
-
             to {
-                translate: -100%;
+                transform: translateX(-100%);
             }
         }
 
         .hero-section {
-            padding-top: 50px;
+            padding: 110px 50px 20px 50px;
             text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-section p {
+            font-size: 16px;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto 24px auto;
         }
 
         h1 {
-            font-size: 40px;
-            font-weight: 100;
+            font-size: 46px;
+            font-weight: 400;
+            line-height: 1.15;
+            margin: 16px 0;
         }
 
         .btn-hero {
             background-color: #ffffff;
-            border: 1px solid #aeaeae;
-            border-radius: 10px;
-            padding: 10px
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 9px 16px;
+            margin-right: 6px;
         }
 
         .section-tag {
-            font-size: 10px;
-            color: blue;
+            font-size: 12px;
+            font-weight: 500;
+            color: #2546f0;
         }
 
         h2 {
             font-size: 30px;
-            font-weight: 100;
+            font-weight: 400;
+            margin: 8px 0 12px 0;
         }
 
         p {
-            font-size: 13px;
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.5;
         }
 
         ul.menu,
         ul.info {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
             padding: 0;
-            margin: 0;
+            margin: 20px 0 12px 0;
+            font-size: 13px;
         }
 
         ul.menu li,
         ul.info li {
             display: flex;
             align-items: center;
-            gap: 3px;
+            gap: 6px;
             color: #6b6b6b;
         }
 
         .info {
             color: #535353bc;
+            margin-top: 12px;
         }
 
         ul li.current-tab {
-            color: blue;
+            color: #2546f0;
+            font-weight: 500;
         }
 
         .media {
             position: relative;
-            margin: 20px 0;
+            margin: 16px 0;
             overflow: hidden;
+            border-radius: 12px;
+            width: 100%;
         }
 
         .image-container {
-            width: 40em;
+            width: 100%;
+            display: block;
             height: auto;
-            border-radius: 10px;
+            border-radius: 12px;
         }
 
         .content {
             position: absolute;
             top: 55px;
-            left: 90px;
+            left: 70px;
             z-index: 2;
         }
 
@@ -188,7 +219,7 @@
         .card-content {
             position: absolute;
             top: 0;
-            left: 170px;
+            left: 25%;
         }
 
         .bg-image {
@@ -198,16 +229,17 @@
         .dec {
             position: absolute;
             width: 200px;
-            top: 20px;
-            left: 45px;
+            top: 15px;
+            left: 40px;
         }
 
         .media p {
             position: absolute;
             bottom: 80px;
-            left: 105px;
+            left: 35%;
             color: #7a7a7a;
             font-size: 15px;
+            white-space: nowrap;
         }
 
         .btn-content {
@@ -215,7 +247,7 @@
             display: flex;
             gap: 20px;
             color: #aeaeae;
-            left: 105px;
+            left: 35%;
             bottom: 30px;
         }
 
@@ -224,151 +256,411 @@
             background-color: #ffffff;
             padding: 8px 10px;
             border-radius: 50%;
+            display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .voice-promt {
             position: absolute;
-            bottom: 50px;
-            left: 210px;
+            bottom: 25px;
+            left: 35%;
             background-color: #d0cece7c;
-            width: 200px;
-            height: 25px;
+            width: 180px;
             border-radius: 50px;
-            padding: 10px;
+            padding: 14px 10px;
             border: 1px solid white;
+            text-align: center;
         }
 
         .voice-promt span {
             color: #ffffff;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
 
         .content3 {
             position: absolute;
-            left: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 21em;
+            height: 100%;
         }
 
         .text-box {
             position: absolute;
-            height: 40px;
-            border-radius: 10px 10px 0 0;
-            border: 1px solid #e8e8e8;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 12px 12px 0 0;
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .layer1 {
-            background-color: #fefefebc;
-            top: -18.5em;
-            left: 6px;
-            width: 19em;
-            height: 100px;
+            background-color: rgba(255, 255, 255, 0.45);
+            top: 2.3em;
+            width: 18.8em;
+            height: 60px;
+            z-index: 1;
         }
 
         .layer2 {
-            background-color: #ffffffbc;
-            top: -18em;
-            left: 3px;
-            width: 19.5em;
-            height: 100px;
+            background-color: rgba(255, 255, 255, 0.75);
+            top: 2.9em;
+            width: 19.9em;
+            height: 60px;
+            z-index: 2;
         }
 
         .layer3 {
             position: absolute;
-            bottom: -11em;
-            width: 20em;
+            top: 3.5em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 21em;
             height: auto;
+            z-index: 3;
+            border-radius: 12px 12px 0 0;
         }
 
         .grid-app {
             display: flex;
+            width: 100%;
+            margin-top: 12px;
+            border: 1px solid rgb(227, 227, 227);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .grid-app li {
-            padding: 10px 20px;
-            width: 86px;
-            border: 1px solid rgb(227, 227, 227);
+            flex: 1;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid rgb(227, 227, 227);
+        }
+
+        .grid-app li:last-child {
+            border-right: none;
+        }
+
+        .grid-app img {
+            width: 50px;
+            height: auto;
         }
 
         .content4 {
             position: absolute;
+            inset: 0;
         }
 
         .image {
             position: absolute;
-            top: -27em;
-            left: 40px;
-            width: 600px;
+            bottom: 0;
+            right: 0;
+            width: 540px;
         }
 
         .logo-app {
             position: absolute;
-            top: -30em;
-            left: 40px;
-            width: 45px;
+            top: 24px;
+            left: 24px;
+            width: 36px;
         }
 
         .content4 span {
             position: absolute;
             color: #e9e9e9;
-            top: -48em;
-            left: 48em;
-            width: 20em;
-            font-size: 10px;
+            top: 35px;
+            right: 25px;
+            font-size: 8px;
         }
 
         .create-task {
             position: absolute;
-            bottom: 25px;
-            left: 470px;
+            bottom: 20px;
+            right: 20px;
             background-color: #ffffff;
-            width: 130px;
-            height: 20px;
             border-radius: 50px;
-            padding: 10px;
-            border: 1px solid rgb(206, 223, 255);
+            padding: 8px 12px;
+            border: 1px solid rgba(227, 227, 227, 0.904);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.064);
         }
 
         .create-task span {
             color: #224bc6;
-            font-size: 10px;
+            font-size: 9px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo-app {
+            left: 60px;
+            top: 30px;
+        }
+
+        .integrations-grid {
+            text-align: center;
+            padding: 0px 20px 60px 0;
+        }
+
+        .integrations-grid hr {
+            border: none;
+            border-top: 1px solid #ececec;
+            margin-bottom: 40px;
+        }
+
+        .integrations-grid h2 {
+            margin-bottom: 8px;
+        }
+
+        .integrations-grid p {
+            color: #6b6b6b;
+            margin-top: 0;
+            margin-bottom: 36px;
         }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 16px;
+            max-width: 480px;
+            margin: 0 auto;
         }
 
         .item {
-            height: 90px;
-            width: 90%;
-            border: 1px solid rgb(220, 220, 220);
-            border-radius: 10px;
+            height: 76px;
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid #ececec;
+            border-radius: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .item img {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        .faqs {
+            max-width: 680px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .faq-header h2 {
+            margin-bottom: 8px;
+        }
+
+        .faq-header p {
+            color: #535353;
+            margin-top: 0;
+        }
+
+        .faq-box {
+            background-color: #ffffff;
+            border: 1px solid #ececec;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #222222;
+            border-bottom: 1px solid #f2f2f2;
+        }
+
+        .faq-row:last-child {
+            border-bottom: none;
+        }
+
+        .faq-arrow {
+            width: 12px;
+            height: 12px;
+            object-fit: contain;
         }
 
         .list {
             list-style-type: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #374151;
+        }
+
+        .list li p {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .list img {
-            width: 14px;
-            height: auto;
+            width: 15px;
+            height: 15px;
+            object-fit: contain;
         }
 
-        #integrations {
-            text-align: center;
+        .cta {
+            max-width: 900px;
+            margin: 80px auto -100px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-card {
+            background-color: #ffffff;
+            border: 1px solid #ececec;
+            border-radius: 16px;
+            padding: 48px 56px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .cta-left {
+            flex: 1;
+        }
+
+        .cta-avatars {
+            height: 36px;
+            margin-bottom: 16px;
+        }
+
+        .cta-left h2 {
+            font-size: 32px;
+            margin: 0 0 12px 0;
+            line-height: 1.2;
+        }
+
+        .cta-left p {
+            color: #4b5563;
+            font-size: 14px;
+            margin: 0 0 24px 0;
+            max-width: 340px;
+            line-height: 1.5;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cta-right {
+            flex: 1;
+        }
+
+        .cta-right h3 {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 0 0 20px 0;
+            color: #111827;
         }
 
         footer {
-            background-color: darkblue;
-            color: white;
+            background-color: #292741;
+            color: #9ca3af;
+            padding: 160px 40px 60px 40px;
+        }
+
+        .footer-content {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+        }
+
+        .footer-left {
+            flex-direction: column;
+            max-width: 260px;
+        }
+
+        .footer-logo {
+            width: 110px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 80px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-socials svg {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .footer-copy {
+            font-size: 11px;
+            color: #6b7280;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .footer-right {
+            right: 50px;
+            display: flex;
+            gap: 100px;
+        }
+
+        .footer-col {
+            border-left: 1px solid #53535395;
+            padding: 0 20px;
+        }
+
+        .footer-col h4 {
+            color: #7b97e2;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #dcdcdc;
+            text-decoration: none;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -377,8 +669,8 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="/Transcriber - Web Image/Transcriber-Images/transcriber-logo.svg" alt="logo"
-                    style="width: 90px;">
+                <img src="Transcriber - Web Image/Transcriber-Images/transcriber-logo.svg" alt="logo"
+                    style="width: 100px;">
             </div>
             <div class="link">
                 <ul class="nav-links">
@@ -399,12 +691,11 @@
     <main>
         <section class="hero-section">
             <div>
-                <img src="/Transcriber - Web Image//Transcriber-Images/imgi_1_top-post-topic-badge.svg" alt="badge"
-                    style="width: 25%;">
+                <img src="Transcriber - Web Image/Transcriber-Images/imgi_1_top-post-topic-badge.svg" alt="badge"
+                    style="width: 180px;">
             </div>
-            <h1>The final <br><span style="color:#535353;">meeting platform.</span></h1>
-            <p style="font-size:18px; font-weight: 500;">Create tasks and docs with AI and your team in real time. Every
-                call ends with progress.</p>
+            <h1>The final <br><span style="color:#6b7280;">meeting platform.</span></h1>
+            <p>Create tasks and docs with AI and your team in real time. Every call ends with progress.</p>
             <div>
                 <button class="btn-hero">Book a demo</button>
                 <button class="btn-insight">Try for free</button>
@@ -412,28 +703,28 @@
 
             <div class="carousel">
                 <div class="group">
-                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-1.png"
-                            style="height: 21px;"></div>
-                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-2.png"
-                            style="height: 22px;"></div>
-                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-3.png"
-                            style="height: 21px;"></div>
-                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-4.png"
-                            style="height: 35px;"></div>
-                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-5.png"
-                            style="height: 35px;"></div>
+                    <div class="card"><img src="Transcriber - Web Image/Transcriber-Images/logo-1.png"
+                            style="height: 21px;" alt="logo1"></div>
+                    <div class="card"><img src="Transcriber - Web Image/Transcriber-Images/logo-2.png"
+                            style="height: 22px;" alt="logo2"></div>
+                    <div class="card"><img src="Transcriber - Web Image/Transcriber-Images/logo-3.png"
+                            style="height: 21px;" alt="logo3"></div>
+                    <div class="card"><img src="Transcriber - Web Image/Transcriber-Images/logo-4.png"
+                            style="height: 35px;" alt="logo4"></div>
+                    <div class="card"><img src="Transcriber - Web Image/Transcriber-Images/logo-5.png"
+                            style="height: 35px;" alt="logo5"></div>
                 </div>
-                <div aria-hidden class="group">
-                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-1.png"
-                            style="height: 21px;"></div>
-                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-2.png"
-                            style="height: 22px;"></div>
-                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-3.png"
-                            style="height: 21px;"></div>
-                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-4.png"
-                            style="height: 35px;"></div>
-                    <div class="card"><img src="/Transcriber - Web Image/Transcriber-Images/logo-5.png"
-                            style="height: 35px;"></div>
+                <div aria-hidden="true" class="group">
+                    <div class="card"><img src="Transcriber - Web Image/Transcriber-Images/logo-1.png"
+                            style="height: 21px;" alt="logo1"></div>
+                    <div class="card"><img src="Transcriber - Web Image/Transcriber-Images/logo-2.png"
+                            style="height: 22px;" alt="logo2"></div>
+                    <div class="card"><img src="Transcriber - Web Image/Transcriber-Images/logo-3.png"
+                            style="height: 21px;" alt="logo3"></div>
+                    <div class="card"><img src="Transcriber - Web Image/Transcriber-Images/logo-4.png"
+                            style="height: 35px;" alt="logo4"></div>
+                    <div class="card"><img src="Transcriber - Web Image/Transcriber-Images/logo-5.png"
+                            style="height: 35px;" alt="logo5"></div>
                 </div>
             </div>
         </section>
@@ -442,7 +733,7 @@
             <div>
                 <span class="section-tag">Meeting Spaces</span>
                 <h2>Every meeting, recording, and action in one place</h2>
-                <p style="font-size:15px;">Transcriber organises meetings into spaces with recordings, knowlegde, and
+                <p>Transcriber organises meetings into spaces with recordings, knowledge, and
                     follow-ups so you and your AI teammate can act without delay.</p>
             </div>
             <div>
@@ -475,7 +766,7 @@
                         </svg>
                         Shared Knowledge
                     </li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path fill="currentColor"
                                 d="M18.75 12a6.75 6.75 0 1 0-3.375 5.846a.75.75 0 0 1 .75 1.299A8.251 8.251 0 1 1 20.25 12a.75.75 0 0 1-1.5 0" />
@@ -484,24 +775,30 @@
                                 d="M14.25 12a2.25 2.25 0 1 0-4.5 0a2.25 2.25 0 0 0 4.5 0m1.5 0a3.75 3.75 0 1 1-7.5 0a3.75 3.75 0 0 1 7.5 0m4.5-.75V13h-1.5v-1.75z" />
                             <path fill="currentColor" d="M14.25 14V9a.75.75 0 0 1 1.5 0v5a.75.75 0 0 1-1.5 0" />
                         </svg>
-                        Replay</li>
+                        Replay
+                    </li>
                 </ul>
             </div>
             <div class="media">
-                <img src="/Transcriber - Web Image/Transcriber-Images/purple-grad-1.png" class="image-container">
+                <img src="Transcriber - Web Image/Transcriber-Images/purple-grad-1.png" class="image-container"
+                    alt="purple-grad-1">
                 <div class="content">
-                    <img src="/Transcriber - Web Image/Transcriber-Images/screen-1-1.png" class="mockup-img">
+                    <img src="Transcriber - Web Image/Transcriber-Images/screen-1-1.png" class="mockup-img"
+                        alt="screen-1">
                 </div>
             </div>
 
             <div>
                 <ul class="info">
-                    <li><span style="color:black;">Replaces:</span><img
-                            src="https://i.pinimg.com/736x/64/df/ca/64dfca4e05282b10c00194c5d4acccc3.jpg"
-                            style="height: 17px; width:auto"> Zoom</li>
+                    <li><span style="color:black;">Replaces:</span>
+                        <img src="https://i.pinimg.com/736x/64/df/ca/64dfca4e05282b10c00194c5d4acccc3.jpg"
+                            alt="logo-zoom" style="height: 17px; width:auto"> Zoom
+                    </li>
                     <li><img src="https://i.pinimg.com/1200x/e5/88/91/e58891e1c2c6c218a90eaab287b5f267.jpg"
-                            style="height: 20px; width:auto">Google Meet</li>
-                    <li><img src="https://cal.com/app-store/granola/icon.svg" style="height: 20px; width:auto">Granola
+                            alt="logo-gmeet" style="height: 20px; width:auto">Google Meet
+                    </li>
+                    <li><img src="https://cal.com/app-store/granola/icon.svg" alt="logo-granola"
+                            style="height: 20px; width:auto">Granola
                     </li>
                 </ul>
             </div>
@@ -511,7 +808,7 @@
             <div>
                 <span class="section-tag">AI Teammate</span>
                 <h2>Where business knowledge comes alive</h2>
-                <p style="font-size:15px;">An AI teammate that carries context from every meeting and page, making
+                <p>An AI teammate that carries context from every meeting and page, making
                     teamwork clearer and next steps effortless.</p>
                 <ul class="list">
                     <li>
@@ -529,12 +826,12 @@
                 </ul>
 
                 <div class="media">
-                    <img src="/Transcriber - Web Image/Transcriber-Images/bg.png" class="image-container">
+                    <img src="Transcriber - Web Image/Transcriber-Images/bg.png" alt="background" class="image-container">
                     <div class="card-content">
-                        <img src="Transcriber - Web Image/Transcriber-Images/imgi_10_BhZqQlgQ5YTU9yZaEMab8NfpxQ.svg"
+                        <img src="Transcriber - Web Image/Transcriber-Images/imgi_10_BhZqQlgQ5YTU9yZaEMab8NfpxQ.svg" alt="background-white"
                             class="bg-image">
                         <div class="content2">
-                            <img src="Transcriber - Web Image/Transcriber-Images/imgi_11_1HOnQYOLivltfoySt6CsOjSayWM.svg"
+                            <img src="Transcriber - Web Image/Transcriber-Images/imgi_11_1HOnQYOLivltfoySt6CsOjSayWM.svg" alt="decoration"
                                 class="dec">
                         </div>
                         <p>Waking Up...</p>
@@ -564,10 +861,11 @@
                                 <path fill="currentColor"
                                     d="M5.465 9.83a.92.92 0 0 0 1.07 0a1 1 0 0 0 .341-.46l.347-1.067a1.7 1.7 0 0 1 1.078-1.078l1.086-.354a.923.923 0 0 0-.037-1.75l-1.069-.346a1.7 1.7 0 0 1-1.08-1.078l-.353-1.084a.92.92 0 0 0-.869-.61a.92.92 0 0 0-.875.624l-.356 1.09A1.71 1.71 0 0 1 3.7 4.775l-1.084.351a.923.923 0 0 0 .013 1.745l1.067.347a1.71 1.71 0 0 1 1.081 1.083l.352 1.08a.92.92 0 0 0 .337.449m5.07 4.021a.8.8 0 0 0 .464.148a.81.81 0 0 0 .759-.55l.248-.761a1.09 1.09 0 0 1 .68-.681l.772-.252a.8.8 0 0 0-.023-1.52l-.764-.25a1.08 1.08 0 0 1-.68-.678l-.252-.774a.8.8 0 0 0-1.518.011l-.247.762a1.07 1.07 0 0 1-.664.679l-.776.253a.8.8 0 0 0-.388 1.222c.099.14.239.244.4.3l.763.247a1.06 1.06 0 0 1 .68.683l.253.774a.8.8 0 0 0 .292.387" />
                             </svg>
-                            Tap or say "Hey Lyra"</span>
+                            Tap or say "Hey Lyra"
+                            x</span>
                     </div>
                 </div>
-
+            </div>
         </section>
 
         <section class="feature-section knowledge">
@@ -592,22 +890,22 @@
                 </ul>
             </div>
             <div class="media">
-                <img src="/Transcriber - Web Image/Transcriber-Images/imgi_33_5sOjm3P6y3R2Ir7SaEy2WtFrMdo.png"
+                <img src="Transcriber - Web Image/Transcriber-Images/imgi_33_5sOjm3P6y3R2Ir7SaEy2WtFrMdo.png" alt="background"
                     class="image-container">
                 <div class="content3">
                     <div class="text-box layer1"></div>
                     <div class="text-box layer2"></div>
-                    <img src="Transcriber - Web Image/Transcriber-Images/imgi_13_xGDAmN0B4wSuHmax4hA4kk4kxys.svg"
+                    <img src="Transcriber - Web Image/Transcriber-Images/imgi_13_xGDAmN0B4wSuHmax4hA4kk4kxys.svg" alt="content"
                         class="layer3">
                 </div>
             </div>
             <div>
                 <ul class="grid-app">
-                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-4.svg"></li>
-                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-5.svg"></li>
-                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-6.svg"></li>
-                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-n.svg"></li>
-                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-pd.svg"></li>
+                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-4.svg" alt="logo-google"></li>
+                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-5.svg" alt="logo-hubspot"></li>
+                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-6.svg" alt="logo-slack"></li>
+                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-n.svg" alt="logo-notion"></li>
+                    <li><img src="Transcriber - Web Image/Transcriber-Images/logo-pd.svg" alt="logo-pandadoc"></li>
                 </ul>
             </div>
         </section>
@@ -636,7 +934,7 @@
                         </svg>
                         Follow Ups
                     </li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 80 80">
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 80 80">
                             <path d="M0 0h80v80H0z" fill="none" />
                             <path fill="currentColor" stroke-linecap="square" stroke-linejoin="round"
                                 d="M37.867 38.4a2 2 0 0 1 0 3.2L11.2 61.6c-1.318.989-3.2.048-3.2-1.6V20c0-1.648 1.882-2.589 3.2-1.6zm32 0a2 2 0 0 1 0 3.2L43.2 61.6c-1.319.989-3.2.048-3.2-1.6V20c0-1.648 1.882-2.589 3.2-1.6z" />
@@ -646,16 +944,16 @@
                 </ul>
             </div>
             <div class="media">
-                <img src="Transcriber - Web Image/Transcriber-Images/imgi_106_HRv3p2lJwmZqEWY39IXdd3caM0.png"
+                <img src="Transcriber - Web Image/Transcriber-Images/imgi_106_HRv3p2lJwmZqEWY39IXdd3caM0.png" alt="background"
                     class="image-container">
                 <div class="content4">
-                    <img src="Transcriber - Web Image/Transcriber-Images/imgi_49_F2OLF4e2ixkOaKd62d9mUxFV8.png"
+                    <img src="Transcriber - Web Image/Transcriber-Images/imgi_49_F2OLF4e2ixkOaKd62d9mUxFV8.png" alt="content"
                         class="image">
-                    <img src="Transcriber - Web Image/Transcriber-Images/logo-n-invert.svg" class="logo-app">
+                    <img src="Transcriber - Web Image/Transcriber-Images/logo-n-invert.svg" alt="logo-notion" class="logo-app">
                     <span>Automatically creating tasks</span>
                 </div>
                 <div class="create-task">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16">
                             <path d="M0 0h16v16H0z" fill="none" />
                             <path fill="currentColor"
                                 d="M5.465 9.83a.92.92 0 0 0 1.07 0a1 1 0 0 0 .341-.46l.347-1.067a1.7 1.7 0 0 1 1.078-1.078l1.086-.354a.923.923 0 0 0-.037-1.75l-1.069-.346a1.7 1.7 0 0 1-1.08-1.078l-.353-1.084a.92.92 0 0 0-.869-.61a.92.92 0 0 0-.875.624l-.356 1.09A1.71 1.71 0 0 1 3.7 4.775l-1.084.351a.923.923 0 0 0 .013 1.745l1.067.347a1.71 1.71 0 0 1 1.081 1.083l.352 1.08a.92.92 0 0 0 .337.449m5.07 4.021a.8.8 0 0 0 .464.148a.81.81 0 0 0 .759-.55l.248-.761a1.09 1.09 0 0 1 .68-.681l.772-.252a.8.8 0 0 0-.023-1.52l-.764-.25a1.08 1.08 0 0 1-.68-.678l-.252-.774a.8.8 0 0 0-1.518.011l-.247.762a1.07 1.07 0 0 1-.664.679l-.776.253a.8.8 0 0 0-.388 1.222c.099.14.239.244.4.3l.763.247a1.06 1.06 0 0 1 .68.683l.253.774a.8.8 0 0 0 .292.387" />
@@ -665,109 +963,111 @@
             </div>
         </section>
 
-        <section id="integrations">
-            <div>
+        <section class="integrations-grid">
+            <div style="max-width: 680px; margin: 0 auto;">
                 <hr>
-                <h2 style="padding-top: 30px;">80+ integrations</h2>
+                <h2>80+ integrations</h2>
                 <p>Connect your agent to powerful external tools</p>
             </div>
             <div class="grid-container">
-                <div class="item">
-                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-1.png">
+                <div class="item"><img src="Transcriber - Web Image/Transcriber-Images/logo-icon-1.png" alt="icon1">
                 </div>
-                <div class="item">
-                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-2.png">
+                <div class="item"><img src="Transcriber - Web Image/Transcriber-Images/logo-icon-2.png" alt="icon2">
                 </div>
-                <div class="item">
-                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-3.png">
+                <div class="item"><img src="Transcriber - Web Image/Transcriber-Images/logo-icon-3.png" alt="icon3">
                 </div>
-                <div class="item">
-                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-4.png">
+                <div class="item"><img src="Transcriber - Web Image/Transcriber-Images/logo-icon-4.png" alt="icon4">
                 </div>
-                <div class="item">
-                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-5.png">
+                <div class="item"><img src="Transcriber - Web Image/Transcriber-Images/logo-icon-5.png" alt="icon5">
                 </div>
-                <div class="item">
-                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-6.png">
+                <div class="item"><img src="Transcriber - Web Image/Transcriber-Images/logo-icon-6.png" alt="icon6">
                 </div>
-                <div class="item">
-                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-7.png">
+                <div class="item"><img src="Transcriber - Web Image/Transcriber-Images/logo-icon-7.png" alt="icon7">
                 </div>
-                <div class="item">
-                    <img src="Transcriber - Web Image/Transcriber-Images/logo-icon-8.png">
+                <div class="item"><img src="Transcriber - Web Image/Transcriber-Images/logo-icon-8.png" alt="icon8">
                 </div>
             </div>
         </section>
 
-        <section id="faqs">
-            <div>
+        <section class="faqs">
+            <div class="faq-header">
                 <h2>FAQs</h2>
                 <p>If you can't find the answer to your question below, email us at <span
-                        style="color:blue;">support@Transcriber.co</span></p>
+                        style="color:#2546f0;">support@transcriber.co</span></p>
             </div>
-            <div>
-                <details>
-                    <summary>Does Transcriber work with Zoom or Google Meet?</summary>
-                    <p></p>
-                </details>
-                <details>
-                    <summary>What makes Transcriber different from AI note-takers?</summary>
-                    <p></p>
-                </details>
-                <details>
-                    <summary>Does Transcriber show up as a participant in my meetings?</summary>
-                    <p></p>
-                </details>
-                <details>
-                    <summary>Can Transcriber connect with the tools we already use?</summary>
-                    <p></p>
-                </details>
-                <details>
-                    <summary>Can I try Transcriber for free?</summary>
-                    <p></p>
-                </details>
-                <details>
-                    <summary>Is Transcriber secure for sensitive calls?</summary>
-                    <p></p>
-                </details>
-                <details>
-                    <summary>Can I ask Transcriber questions outside of meetings?</summary>
-                    <p></p>
-                </details>
+            <div class="faq-box">
+                <div class="faq-row">
+                    <span>Does Transcriber work with Zoom or Google Meet?</span>
+                    <img src="Transcriber - Web Image/Transcriber-Images/chevron-down.svg" alt="arrow"
+                        class="faq-arrow">
+                </div>
+                <div class="faq-row">
+                    <span>What makes Transcriber different from AI note-takers?</span>
+                    <img src="Transcriber - Web Image/Transcriber-Images/chevron-down.svg" alt="arrow"
+                        class="faq-arrow">
+                </div>
+                <div class="faq-row">
+                    <span>Does Transcriber show up as a participant in my meetings?</span>
+                    <img src="Transcriber - Web Image/Transcriber-Images/chevron-down.svg" alt="arrow"
+                        class="faq-arrow">
+                </div>
+                <div class="faq-row">
+                    <span>Can Transcriber connect with the tools we already use?</span>
+                    <img src="Transcriber - Web Image/Transcriber-Images/chevron-down.svg" alt="arrow"
+                        class="faq-arrow">
+                </div>
+                <div class="faq-row">
+                    <span>Can I try Transcriber for free?</span>
+                    <img src="Transcriber - Web Image/Transcriber-Images/chevron-down.svg" alt="arrow"
+                        class="faq-arrow">
+                </div>
+                <div class="faq-row">
+                    <span>Is Transcriber secure for sensitive calls?</span>
+                    <img src="Transcriber - Web Image/Transcriber-Images/chevron-down.svg" alt="arrow"
+                        class="faq-arrow">
+                </div>
+                <div class="faq-row">
+                    <span>Can I ask Transcriber questions outside of meetings?</span>
+                    <img src="Transcriber - Web Image/Transcriber-Images/chevron-down.svg" alt="arrow"
+                        class="faq-arrow">
+                </div>
             </div>
         </section>
 
-        <section id="b">
-            <div>
-                <div>
-                    <div>
-                        <img src="/Transcriber - Web Image/Transcriber-Images/imgi_31_yc89iqIFS0VowDO6Vb4mj0Vs6dw.svg">
-                    </div>
-                    <h1>Ready to take meetings <br><span style="color:#535353;">to the next level?</span></h1>
+        <section class="cta">
+            <div class="cta-card">
+                <div class="cta-left">
+                    <img src="Transcriber - Web Image/Transcriber-Images/imgi_31_yc89iqIFS0VowDO6Vb4mj0Vs6dw.svg"
+                        alt="avatars" class="cta-avatars">
+                    <h2>Ready to take meetings <br><span style="color:#6b7280;">to the next level?</span></h2>
                     <p>Try Transcriber for a few meetings today. It's free to get started.</p>
-                    <button class="btn-insight">Sign up</button>
-                    <button
-                        style="background-color: #ffffff; border: 1px solid #aeaeae; border-radius: 10px; padding: 10px;">Book
-                        a demo</button>
+                    <div class="cta-buttons">
+                        <button class="btn-insight">Sign up</button>
+                        <button class="btn-hero">Book a demo</button>
+                    </div>
                 </div>
-                <div>
+                <div class="cta-right">
                     <h3>What we'll cover on our demo</h3>
                     <ul class="list">
                         <li>
-                            <p><img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg">
-                                CAutomatic notes and follow-ups from every call</p>
+                            <img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg"
+                                alt="check">
+                            <span>Automatic notes and follow-ups from every call</span>
                         </li>
                         <li>
-                            <p><img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg"> All
-                                meetings, docs, and decisions in one place</p>
+                            <img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg"
+                                alt="check">
+                            <span>All meetings, docs, and decisions in one place</span>
                         </li>
                         <li>
-                            <p><img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg"> How
-                                Transcriber saves teams hours each week</p>
+                            <img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg"
+                                alt="check">
+                            <span>How Transcriber saves teams hours each week</span>
                         </li>
                         <li>
-                            <p><img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg"> Quick
-                                demo of the platform</p>
+                            <img src="https://i.pinimg.com/736x/eb/64/7e/eb647e6ba34b7777aa6d77993c796d2c.jpg"
+                                alt="check">
+                            <span>Quick demo of the platform</span>
                         </li>
                     </ul>
                 </div>
@@ -777,42 +1077,56 @@
     </main>
 
     <footer>
-        <div>
-            <img src="/Transcriber - Web Image/Transcriber-Images/transcriber-logo.svg" alt="logo">
-            <div>
-                <img>
-                <img>
-            </div>
-            <p> &copy; 2025 Seeking Sigma Inc. All rights reserved.</p>
-        </div>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo-row">
+                    <img src="Transcriber - Web Image/Transcriber-Images/transcriber-logo.svg" alt="logo"
+                        class="footer-logo">
+                </div>
+                <div class="footer-socials">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path fill="#fff" fill-rule="evenodd"
+                            d="M1 2.838A1.84 1.84 0 0 1 2.838 1H21.16A1.837 1.837 0 0 1 23 2.838V21.16A1.84 1.84 0 0 1 21.161 23H2.838A1.84 1.84 0 0 1 1 21.161zm8.708 6.55h2.979v1.496c.43-.86 1.53-1.634 3.183-1.634c3.169 0 3.92 1.713 3.92 4.856v5.822h-3.207v-5.106c0-1.79-.43-2.8-1.522-2.8c-1.515 0-2.145 1.089-2.145 2.8v5.106H9.708zm-5.5 10.403h3.208V9.25H4.208zM7.875 5.812a2.063 2.063 0 1 1-4.125 0a2.063 2.063 0 0 1 4.125 0"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <path d="M0 0h16v16H0z" fill="none" />
+                        <path fill="#fff"
+                            d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                    </svg>
+                </div>
+                <p class="footer-copy">&copy; 2025 Seeking Sigma Inc. All rights reserved.</p>
 
-        <div>
-            <div>
-                <h4>Product</h4>
-                <ul>
-                    <li><a href="#ai">AI Teammates</a></li>
-                    <li><a>Meetings</a></li>
-                    <li><a>Integrations</a></li>
-                    <li><a>Changelog</a></li>
-                </ul>
             </div>
-            <div>
-                <h4>Resources</h4>
-                <ul>
-                    <li>Blog</li>
-                    <li>Customers</li>
-                    <li>Enterprise</li>
-                    <li>Help Center</li>
-                </ul>
-            </div>
-            <div>
-                <h4>Company</h4>
-                <ul>
-                    <li>Careers</li>
-                    <li>Legal</li>
-                    <li>Status</li>
-                    <li>Contact</li>
-                </ul>
+            <div class="footer-right">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#ai">AI Teammates</a></li>
+                        <li><a href="#meetings">Meetings</a></li>
+                        <li><a href="#integrations">Integrations</a></li>
+                        <li><a href="#changelog">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Customers</a></li>
+                        <li><a href="#">Enterprise</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Legal</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
