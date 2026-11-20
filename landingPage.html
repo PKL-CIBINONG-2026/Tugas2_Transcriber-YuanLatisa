@@ -5,1007 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meeting Platform Landing Page</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
-
-        * {
-            box-sizing: border-box;
-        }
-
-        h1,
-        h2 {
-            font-family: "Libre Baskerville", serif;
-        }
-
-        body {
-            font-family: "Inter", sans-serif;
-            padding: 0;
-            margin: 0;
-        }
-
-        .feature-section {
-            max-width: 40em;
-            margin: 70px auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: #ffffff;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            background-color: #ffffff;
-            border-bottom: 1px solid #c9c9c9c6;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            padding: 12px 40px;
-            font-size: 13px;
-        }
-
-        ul {
-            padding: 0;
-            list-style: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            margin: 0;
-            color: #4b5563;
-        }
-
-        button {
-            font-size: 12px;
-            cursor: pointer;
-            font-family: "Inter", sans-serif;
-        }
-
-        .btn-login {
-            border: none;
-            background-color: transparent;
-            margin-right: 10px;
-            color: #374151;
-        }
-
-        .btn-insight {
-            border: none;
-            background-color: #2546f0;
-            color: white;
-            border-radius: 8px;
-            padding: 9px 16px;
-        }
-
-        #menu-check {
-            display: none;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-
-        .carousel {
-            margin: 60px auto 0 auto;
-            max-width: 600px;
-            display: flex;
-            overflow: hidden;
-            gap: 40px;
-        }
-
-        .carousel::-webkit-scrollbar {
-            display: none;
-        }
-
-        .group {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            gap: 40px;
-            flex-shrink: 0;
-            min-width: 100%;
-            animation: spin 30s infinite linear;
-        }
-
-        .card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @keyframes spin {
-            to {
-                transform: translateX(-100%);
-            }
-        }
-
-        .hero-section {
-            padding: 110px 50px 20px 50px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-section p {
-            font-size: 16px;
-            font-weight: 400;
-            max-width: 600px;
-            margin: 0 auto 24px auto;
-        }
-
-        h1 {
-            font-size: 46px;
-            font-weight: 400;
-            line-height: 1.15;
-            margin: 16px 0;
-        }
-
-        .btn-hero {
-            background-color: #ffffff;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            padding: 9px 16px;
-            margin-right: 6px;
-        }
-
-        .section-tag {
-            font-size: 12px;
-            font-weight: 500;
-            color: #2546f0;
-        }
-
-        h2 {
-            font-size: 30px;
-            font-weight: 400;
-            margin: 8px 0 12px 0;
-        }
-
-        p {
-            font-size: 14px;
-            color: #4b5563;
-            line-height: 1.5;
-        }
-
-        ul.menu,
-        ul.info {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            padding: 0;
-            margin: 20px 0 12px 0;
-            font-size: 13px;
-        }
-
-        ul.menu li,
-        ul.info li {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: #6b6b6b;
-        }
-
-        .info {
-            color: #535353bc;
-            margin-top: 12px;
-        }
-
-        ul li.current-tab {
-            color: #2546f0;
-            font-weight: 500;
-        }
-
-        .media {
-            position: relative;
-            margin: 16px 0;
-            overflow: hidden;
-            border-radius: 12px;
-            width: 100%;
-        }
-
-        .image-container {
-            width: 100%;
-            display: block;
-            height: auto;
-            border-radius: 12px;
-        }
-
-        .content {
-            position: absolute;
-            top: 55px;
-            left: 70px;
-            z-index: 2;
-        }
-
-        .mockup-img {
-            width: 550px;
-            max-width: 100%;
-            height: auto;
-        }
-
-        .card-content {
-            position: absolute;
-            top: 0;
-            left: 25%;
-        }
-
-        .bg-image {
-            width: 300px;
-            max-width: 80%;
-        }
-
-        .dec {
-            position: absolute;
-            width: 200px;
-            top: 15px;
-            left: 40px;
-        }
-
-        .media p {
-            position: absolute;
-            bottom: 80px;
-            left: 35%;
-            color: #7a7a7a;
-            font-size: 15px;
-            white-space: nowrap;
-        }
-
-        .btn-content {
-            position: absolute;
-            display: flex;
-            gap: 20px;
-            color: #aeaeae;
-            left: 35%;
-            bottom: 30px;
-        }
-
-        .btn-cancel,
-        .btn-mic {
-            background-color: #ffffff;
-            padding: 8px 10px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .voice-promt {
-            position: absolute;
-            bottom: 25px;
-            left: 35%;
-            background-color: #d0cece7c;
-            width: 180px;
-            border-radius: 50px;
-            padding: 14px 10px;
-            border: 1px solid white;
-            text-align: center;
-        }
-
-        .voice-promt span {
-            color: #ffffff;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .content3 {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 0;
-            width: 21em;
-            height: 100%;
-        }
-
-        .text-box {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 12px 12px 0 0;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-        }
-
-        .layer1 {
-            background-color: rgba(255, 255, 255, 0.45);
-            top: 2.3em;
-            width: 18.8em;
-            height: 60px;
-            z-index: 1;
-        }
-
-        .layer2 {
-            background-color: rgba(255, 255, 255, 0.75);
-            top: 2.9em;
-            width: 19.9em;
-            height: 60px;
-            z-index: 2;
-        }
-
-        .layer3 {
-            position: absolute;
-            top: 3.5em;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 21em;
-            height: auto;
-            z-index: 3;
-            border-radius: 12px 12px 0 0;
-        }
-
-        .grid-app {
-            display: flex;
-            width: 100%;
-            margin-top: 12px;
-            border: 1px solid rgb(227, 227, 227);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .grid-app li {
-            flex: 1;
-            padding: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-right: 1px solid rgb(227, 227, 227);
-        }
-
-        .grid-app li:last-child {
-            border-right: none;
-        }
-
-        .grid-app img {
-            width: 50px;
-            height: auto;
-        }
-
-        .content4 {
-            position: absolute;
-            inset: 0;
-        }
-
-        .image {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 540px;
-            max-width: 100%;
-        }
-
-        .logo-app {
-            position: absolute;
-            top: 30px;
-            left: 60px;
-            width: 36px;
-        }
-
-        .content4 span {
-            position: absolute;
-            color: #e9e9e9;
-            top: 35px;
-            right: 25px;
-            font-size: 8px;
-        }
-
-        .create-task {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ffffff;
-            border-radius: 50px;
-            padding: 8px 12px;
-            border: 1px solid rgba(227, 227, 227, 0.904);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.064);
-        }
-
-        .create-task span {
-            color: #224bc6;
-            font-size: 9px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .integrations-grid {
-            text-align: center;
-            padding: 0px 20px 60px 0;
-        }
-
-        .integrations-grid hr {
-            border: none;
-            border-top: 1px solid #ececec;
-            margin-bottom: 40px;
-        }
-
-        .integrations-grid h2 {
-            margin-bottom: 8px;
-        }
-
-        .integrations-grid p {
-            color: #6b6b6b;
-            margin-top: 0;
-            margin-bottom: 36px;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            max-width: 480px;
-            margin: 0 auto;
-        }
-
-        .item {
-            height: 76px;
-            width: 100%;
-            background-color: #ffffff;
-            border: 1px solid #ececec;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .item img {
-            width: 28px;
-            height: 28px;
-            object-fit: contain;
-        }
-
-        .faqs {
-            max-width: 680px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .faq-header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .faq-header h2 {
-            margin-bottom: 8px;
-        }
-
-        .faq-header p {
-            color: #535353;
-            margin-top: 0;
-        }
-
-        .faq-box {
-            background-color: #ffffff;
-            border: 1px solid #ececec;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .faq-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 24px;
-            font-size: 13px;
-            font-weight: 500;
-            color: #222222;
-            border-bottom: 1px solid #f2f2f2;
-        }
-
-        .faq-row:last-child {
-            border-bottom: none;
-        }
-
-        .faq-arrow {
-            width: 12px;
-            height: 12px;
-            object-fit: contain;
-        }
-
-        .list {
-            list-style-type: none;
-            padding: 0;
-            margin: 16px 0;
-        }
-
-        .list li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-            font-size: 13px;
-            color: #374151;
-        }
-
-        .list li p {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .list img {
-            width: 15px;
-            height: 15px;
-            object-fit: contain;
-        }
-
-        .cta {
-            max-width: 900px;
-            margin: 80px auto -100px auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .cta-card {
-            background-color: #ffffff;
-            border: 1px solid #ececec;
-            border-radius: 16px;
-            padding: 48px 56px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-        }
-
-        .cta-left {
-            flex: 1;
-        }
-
-        .cta-avatars {
-            height: 36px;
-            margin-bottom: 16px;
-        }
-
-        .cta-left h2 {
-            font-size: 32px;
-            margin: 0 0 12px 0;
-            line-height: 1.2;
-        }
-
-        .cta-left p {
-            color: #4b5563;
-            font-size: 14px;
-            margin: 0 0 24px 0;
-            max-width: 340px;
-            line-height: 1.5;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .cta-right {
-            flex: 1;
-        }
-
-        .cta-right h3 {
-            font-size: 18px;
-            font-weight: 400;
-            margin: 0 0 20px 0;
-            color: #111827;
-        }
-
-        footer {
-            background-color: #292741;
-            color: #9ca3af;
-            padding: 160px 40px 60px 40px;
-        }
-
-        .footer-content {
-            max-width: 850px;
-            margin: 0 auto;
-            display: flex;
-            align-items: flex-start;
-            gap: 60px;
-        }
-
-        .footer-left {
-            flex-direction: column;
-            max-width: 260px;
-        }
-
-        .footer-logo {
-            width: 110px;
-            filter: brightness(0) invert(1);
-            margin-bottom: 80px;
-        }
-
-        .footer-socials {
-            display: flex;
-            gap: 12px;
-        }
-
-        .footer-socials svg {
-            width: 18px;
-            height: 18px;
-            object-fit: contain;
-            opacity: 0.8;
-            margin-bottom: 15px;
-        }
-
-        .footer-copy {
-            font-size: 11px;
-            color: #6b7280;
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        .footer-right {
-            right: 50px;
-            display: flex;
-            gap: 100px;
-        }
-
-        .footer-col {
-            border-left: 1px solid #53535395;
-            padding: 0 20px;
-        }
-
-        .footer-col h4 {
-            color: #7b97e2;
-            font-size: 13px;
-            font-weight: 600;
-            margin: 0 0 16px 0;
-        }
-
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer-col ul li a {
-            color: #dcdcdc;
-            text-decoration: none;
-            font-size: 13px;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 12px 20px;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: #ffffff;
-                padding: 20px;
-                gap: 16px;
-                border-bottom: 1px solid #c9c9c9c6;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            }
-
-            #menu-check:checked~.link .nav-links {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .hero-section {
-                padding: 100px 20px 20px 20px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .cta-card {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 32px;
-                gap: 28px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 40px;
-            }
-
-            .footer-right {
-                right: 0;
-                gap: 40px;
-                flex-wrap: wrap;
-            }
-
-            .footer-col {
-                border-left: none;
-                padding: 0;
-            }
-
-            .card-content {
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .bg-image {
-                width: 270px;
-                max-width: 90%;
-            }
-
-            .dec {
-                top: 0px;
-                left: 33%;
-            }
-
-            .media p {
-                left: 42%;
-                bottom: 65px;
-            }
-
-            .btn-content {
-                left: 42%;
-                bottom: 25px;
-            }
-
-            .voice-promt {
-                left: 35%;
-                bottom: 60px;
-            }
-
-        }
-
-        @media (max-width: 480px) {
-            nav {
-                padding: 10px 16px;
-            }
-
-            .nav-links {
-                top: 100%;
-            }
-
-            .hero-section {
-                padding: 90px 16px 16px 16px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            .feature-section {
-                margin: 40px auto;
-                padding: 0 16px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            p {
-                font-size: 10px;
-            }
-
-            .section-tag {
-                font-size: 9px;
-            }
-
-            ul.menu,
-            ul.info {
-                flex-wrap: wrap;
-                gap: 8px 12px;
-            }
-
-            .content {
-                top: 30px;
-                left: 15%;
-                width: 850%;
-            }
-
-            .mockup-img {
-                width: 10%;
-            }
-
-            .card-content {
-                left: 50%;
-                transform: translateX(-50%);
-                width: 60%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .bg-image {
-                width: 220px;
-            }
-
-            .dec {
-                top: 0;
-                left: 24%;
-                width: 100px;
-            }
-
-            .media p {
-                bottom: 50px;
-                left: 35%;
-                font-size: 10px;
-            }
-
-            .btn-content {
-                gap: 10px;
-                bottom: 20px;
-                left: 31%;
-            }
-
-            .btn-cancel,
-            .btn-mic {
-                padding: 6px 7px;
-            }
-
-            .voice-promt {
-                bottom: 20px;
-                left: 32%;
-                width: 120px;
-                padding: 3px 3px;
-            }
-
-            .voice-promt span {
-                font-size: 8px;
-                gap: 4px;
-            }
-
-            .content3 {
-                width: 90%;
-            }
-
-            .image {
-                width: 90%;
-                position: relative;
-                left: 35px;
-                top: 44px;
-            }
-
-            .logo-app {
-                top: 15px;
-                left: 35px;
-                width: 28px;
-            }
-
-            .content4 span {
-                top: 18px;
-                right: 15px;
-                font-size: 6px;
-            }
-
-            .create-task {
-                bottom: 12px;
-                right: 12px;
-                padding: 6px 10px;
-            }
-
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .faq-row span {
-                font-size: 12px;
-                width: 85%;
-            }
-
-            .cta {
-                margin: 40px auto -60px auto;
-            }
-
-            .cta-card {
-                padding: 20px;
-                gap: 50px;
-            }
-
-            .cta-left h2 {
-                font-size: 24px;
-            }
-
-            footer {
-                padding: 80px 20px 40px 30px;
-            }
-
-            .footer-right {
-                gap: 24px;
-                flex-direction: column;
-            }
-
-            .footer-logo {
-                margin-bottom: 20px;
-            }
-
-            .content3 {
-                width: 85%;
-                height: 100%;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .text-box.layer1 {
-                width: 60%;
-                height: 45px;
-                top: 2em;
-            }
-
-            .text-box.layer2 {
-                width: 63%;
-                height: 45px;
-                top: 2.6em;
-            }
-
-            .layer3 {
-                width: 65%;
-                top: 3.2em;
-            }
-
-            .grid-app {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-            }
-
-            .grid-app li {
-                padding: 8px;
-                min-width: 50px;
-            }
-
-            .grid-app img {
-                width: 32px;
-            }
-
-            .hero-section p {
-                font-size: 11px;
-            }
-
-            .menu li {
-                font-size: 10px;
-            }
-
-            .info li {
-                font-size: 8px;
-            }
-
-            .badge-tittle img {
-                width: 40% !important;
-                height: auto;
-            }
-
-            .logo img {
-                width: 60% !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -1013,12 +13,10 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="Transcriber - Web Image/Transcriber-Images/transcriber-logo.svg" alt="logo"
-                    style="width: 100px;">
+                <img src="Transcriber - Web Image/Transcriber-Images/transcriber-logo.svg" alt="logo">
             </div>
 
             <input type="checkbox" id="menu-check">
-
             <div class="link">
                 <ul class="nav-links">
                     <li><a>Product</a></li>
@@ -1026,32 +24,35 @@
                     <li><a>Pricing</a></li>
                     <li><a>Customers</a></li>
                     <li><a>Talk to Sales</a></li>
+                    <li class="mobile-only-btn"><button class="btn-login">Log in</button></li>
+                    <li class="mobile-only-btn"><button class="btn-insight">Sign up</button></li>
                 </ul>
+                <div class="nav-right-container">
+                    <div class="nav-buttons">
+                        <button class="btn-login">Log in</button>
+                        <button class="btn-insight">Sign up</button>
+                    </div>
+                    <label for="menu-check" class="menu-toggle" aria-label="Open Menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <path fill="none" stroke="#040404" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5" d="m2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5" />
+                        </svg>
+                    </label>
+                </div>
             </div>
 
-            <div class="nav-buttons">
-                <button class="btn-login">Log in</button>
-                <button class="btn-insight">Sign up</button>
-                <label for="menu-check" class="menu-toggle" aria-label="Open Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                        <path d="M0 0h16v16H0z" fill="none" />
-                        <path fill="none" stroke="#040404" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5" d="m2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5" />
-                    </svg>
-                </label>
-            </div>
         </nav>
     </header>
 
     <main>
         <section class="hero-section">
             <div class="badge-tittle">
-                <img src="Transcriber - Web Image/Transcriber-Images/imgi_1_top-post-topic-badge.svg" alt="badge"
-                    style="width: 180px;">
+                <img src="Transcriber - Web Image/Transcriber-Images/imgi_1_top-post-topic-badge.svg" alt="badge">
             </div>
             <h1>The final <br><span style="color:#6b7280;">meeting platform.</span></h1>
             <p>Create tasks and docs with AI and your team in real time. Every call ends with progress.</p>
-            <div>
+            <div class="hero-actions">
                 <button class="btn-hero">Book a demo</button>
                 <button class="btn-insight">Try for free</button>
             </div>
@@ -1084,7 +85,7 @@
             </div>
         </section>
 
-        <section class="feature-section meeting-spaces">
+        <section class="feature-section meeting-spaces" id="meetings">
             <div>
                 <span class="section-tag">Meeting Spaces</span>
                 <h2>Every meeting, recording, and action in one place</h2>
@@ -1145,7 +146,7 @@
 
             <div>
                 <ul class="info">
-                    <li><span style="color:black;">Replaces:</span>
+                    <li><span style="color:#111827; font-weight: 500;">Replaces:</span>
                         <img src="https://i.pinimg.com/736x/64/df/ca/64dfca4e05282b10c00194c5d4acccc3.jpg"
                             alt="logo-zoom" style="height: 17px; width:auto"> Zoom
                     </li>
@@ -1159,7 +160,7 @@
             </div>
         </section>
 
-        <section class="feature-section ai-teammate">
+        <section class="feature-section ai-teammate" id="ai">
             <div>
                 <span class="section-tag">AI Teammate</span>
                 <h2>Where business knowledge comes alive</h2>
@@ -1192,14 +193,14 @@
                         </div>
                         <p>Waking Up...</p>
                         <div class="btn-content">
-                            <div class="btn-cancel"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                            <div class="btn-cancel"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                     viewBox="0 0 2048 2048">
                                     <path d="M0 0h2048v2048H0z" fill="none" />
                                     <path fill="currentColor"
                                         d="m1115 1024l690 691l-90 90l-691-690l-691 690l-90-90l690-691l-690-691l90-90l691 690l691-690l90 90z" />
                                 </svg>
                             </div>
-                            <div class="btn-mic"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                            <div class="btn-mic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                     viewBox="0 0 16 16">
                                     <path d="M0 0h16v16H0z" fill="none" />
                                     <g fill="currentColor">
@@ -1212,7 +213,7 @@
                         </div>
                     </div>
                     <div class="voice-promt">
-                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16">
                                 <path d="M0 0h16v16H0z" fill="none" />
                                 <path fill="currentColor"
                                     d="M5.465 9.83a.92.92 0 0 0 1.07 0a1 1 0 0 0 .341-.46l.347-1.067a1.7 1.7 0 0 1 1.078-1.078l1.086-.354a.923.923 0 0 0-.037-1.75l-1.069-.346a1.7 1.7 0 0 1-1.08-1.078l-.353-1.084a.92.92 0 0 0-.869-.61a.92.92 0 0 0-.875.624l-.356 1.09A1.71 1.71 0 0 1 3.7 4.775l-1.084.351a.923.923 0 0 0 .013 1.745l1.067.347a1.71 1.71 0 0 1 1.081 1.083l.352 1.08a.92.92 0 0 0 .337.449m5.07 4.021a.8.8 0 0 0 .464.148a.81.81 0 0 0 .759-.55l.248-.761a1.09 1.09 0 0 1 .68-.681l.772-.252a.8.8 0 0 0-.023-1.52l-.764-.25a1.08 1.08 0 0 1-.68-.678l-.252-.774a.8.8 0 0 0-1.518.011l-.247.762a1.07 1.07 0 0 1-.664.679l-.776.253a.8.8 0 0 0-.388 1.222c.099.14.239.244.4.3l.763.247a1.06 1.06 0 0 1 .68.683l.253.774a.8.8 0 0 0 .292.387" />
@@ -1268,7 +269,7 @@
             </div>
         </section>
 
-        <section class="feature-section integrations">
+        <section class="feature-section integrations" id="integrations">
             <div>
                 <span class="section-tag">Integrations</span>
                 <h2>Where decisions turn into action</h2>
@@ -1455,7 +456,6 @@
                     </svg>
                 </div>
                 <p class="footer-copy">&copy; 2025 Seeking Sigma Inc. All rights reserved.</p>
-
             </div>
             <div class="footer-right">
                 <div class="footer-col">
