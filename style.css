@@ -824,9 +824,13 @@ footer {
   font-size: 13px;
 }
 
+.footer-col a:hover {
+  color: #ffffff;
+}
+
 @media (max-width: 768px) {
   nav {
-    padding: 12px 24px;
+    padding: 14px 24px;
   }
 
   .nav-links {
@@ -872,6 +876,10 @@ footer {
 
   .menu-toggle {
     display: inline-flex;
+  }
+
+  .btn-login:hover {
+    background-color: #dfdfdf;
   }
 
   .hero-section {
@@ -926,7 +934,7 @@ footer {
 
 @media (max-width: 480px) {
   nav {
-    padding: 10px 16px;
+    padding: 14px 16px;
   }
 
   .logo img {
